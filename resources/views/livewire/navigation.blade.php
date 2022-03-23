@@ -45,7 +45,7 @@
                         {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> --}}
 
                         @foreach ($sections as $section)
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$section->title}}</a>
+                            <a href="{{$section->slug}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$section->title}}</a>
                         @endforeach
                     </div>
                 </div>

@@ -9,6 +9,8 @@ class Section extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'slug', 'extract', 'content', 'status'];
+
     //Relación uno a uno polimorfica
 
     public function image(){
