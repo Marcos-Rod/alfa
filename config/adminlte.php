@@ -271,6 +271,12 @@ return [
             'icon' => 'fas fa-fw fa-photo-video',
             
         ],
+        [
+            'text' => 'Servicios',
+            'route'  => 'admin.services.index',
+            'icon' => 'fas fa-fw fa-briefcase',
+            
+        ],
     ],
 
     /*

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::makeDirectory('sections');
+        /* Storage::makeDirectory('sections'); */
         
         // \App\Models\User::factory(10)->create();
         User::create([
@@ -36,6 +36,11 @@ class DatabaseSeeder extends Seeder
             'meta_description' => 'Barberia profesional'
         ]);
 
-        $this->call(SectionSeeder::class);
+        Section::create([
+            'title' => 'Inicio',
+            'slug' => 'inicio',
+            'extract' => 'Sección en construcción',
+            'content' => 'Sección en construcción'
+        ]);
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageGalleryController;
 use App\Http\Controllers\Admin\SectionController;
+use App\Http\Controllers\Admin\ServiceController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
@@ -16,3 +17,5 @@ Route::put('sections/{section}/archive', [SectionController::class, 'archive'])-
 
 Route::resource('galleries', GalleryController::class)->names('admin.galleries');
 Route::resource('gallery/image', ImageGalleryController::class)->names('admin.galleryimages');
+
+Route::resource('services', ServiceController::class)->names('admin.services');
