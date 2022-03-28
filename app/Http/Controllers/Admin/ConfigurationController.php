@@ -73,7 +73,7 @@ class ConfigurationController extends Controller
      */
     public function update(Request $request, Configuration $configuration)
     {
-        /* return $configuration->image; */
+        /* return $configuration->image(); */
 
 
         $request->validate([
@@ -89,9 +89,15 @@ class ConfigurationController extends Controller
         if ($request->file('logo')) {
             $url = Storage::put('images', $request->file('logo'));
 
-            $configuration->image()->update([
-                'url' => $url
-            ]);
+            if (isset($configuration->image->url)) {
+                $configuration->image()->update([
+                    'url' => $url
+                ]);
+            }else{
+                $configuration->image()->create([
+                    'url' => $url
+                ]);
+            }
         }
 
         $configuration->update($request->all());

@@ -3,7 +3,7 @@
 @section('title', 'Secciones')
 
 @section('content_header')
-    <h1>Secciones</h1>
+    <h1>Listado de Secciones</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
     <div class="card">
         <div class="card-body">
             <div>
-                <a href="{{route('admin.sections.create')}}" class="btn btn-default">Nueva sección</a>
+                <a href="{{route('admin.sections.create')}}" class="btn btn-secondary">Nueva sección</a>
             </div>
             <table class="table table-striped table-hover">
                 <thead>

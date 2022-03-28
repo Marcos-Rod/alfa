@@ -16,20 +16,15 @@ return new class extends Migration
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
 
-            $table->string('logo');
-            $table->string('favicon');
-            $table->string('social');
-            $table->string('phone');
-            $table->string('location');
-            $table->string('name_business');
-            $table->string('mail');
-            $table->text('mail_response');
-            $table->string('seo_term');
-            $table->text('meta_keywords');
-            $table->text('meta_description');
-            $table->text('analytics');
-            $table->string('captcha_public');
-            $table->string('captcha_private');
+            $table->string('name_business')->nullable();
+            $table->string('mail')->nullable();
+            $table->text('mail_response')->nullable();
+            $table->string('seo_term')->nullable();
+            $table->text('meta_keywords')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('analytics')->nullable();
+            $table->string('captcha_public')->nullable();
+            $table->string('captcha_private')->nullable();
 
             $table->timestamps();
         });

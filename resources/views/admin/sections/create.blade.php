@@ -34,8 +34,10 @@
 @section('js')
 
     <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
+    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
 
     <script>
+        //slug
         $(document).ready( function() {
             $("#title").stringToSlug({
                 setEvents: 'keyup keydown blur',
@@ -43,5 +45,18 @@
                 space: '-'
             });
         });
+        
+        /* Ck editor */
+        CKEDITOR.replace( 'content' );
+
+        ClassicEditor
+            .create( document.querySelector( '#content' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+
+
+        
+        
     </script>
 @endsection

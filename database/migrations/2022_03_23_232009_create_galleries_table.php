@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
 
             $table->string('title');
             $table->string('slug');
-            $table->text('extract')->nullable();
-            $table->longText('content')->nullable();
-            $table->enum('status', [1, 2])->default(1);
-            
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sections');
+        Schema::dropIfExists('galleries');
     }
 };

@@ -33,7 +33,6 @@
                         <p>Selecciona una imagen no mayor de 200kb</p>
                     </div>
                     <div class="col">
-                        {{-- {{print_r($configuration[0]->image->url)}} --}}
                         @if (!empty($configuration[0]->image->url))
                             <img src="{{Storage::url($configuration[0]->image->url)}}" alt="{{$configuration[0]->name_business}}" class="img-fluid" id="picture" />                            
                         @else
@@ -122,7 +121,18 @@
 @stop
 
 @section('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
+
     <script>
+        /* Ck editor */
+
+        ClassicEditor
+            .create( document.querySelector( '#mail_response' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+        
+
         //Cambiar imagen
         document.getElementById("logo").addEventListener('change', cambiarImagen);
 

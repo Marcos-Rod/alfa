@@ -265,6 +265,12 @@ return [
             'icon' => 'fas fa-fw fa-copy',
             
         ],
+        [
+            'text' => 'Galerías',
+            'route'  => 'admin.galleries.index',
+            'icon' => 'fas fa-fw fa-photo-video',
+            
+        ],
     ],
 
     /*
