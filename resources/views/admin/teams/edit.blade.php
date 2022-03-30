@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Servicios')
+@section('title', 'Equipo')
 
 @section('content_header')
-    <h1>Editar de servicio</h1>
+    <h1>Nuevo registro</h1>
 @stop
 
 @section('content')
@@ -15,11 +15,11 @@
 
     <div class="card">
         <div class="card-body">
-            {!! Form::model($service, ['route' => ['admin.services.update', $service], 'method' => 'put', 'files' => true]) !!}
+            {!! Form::model($team, ['route' => ['admin.teams.update', $team], 'method' => 'put', 'files' => true]) !!}
 
-                @include('admin.services.partials.form')
+                @include('admin.teams.form')
 
-                {!! Form::submit('Editar servicio', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
@@ -42,20 +42,7 @@
 @stop
 
 @section('js')
-
-    <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
-    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
-
     <script>
-        //slug
-        $(document).ready( function() {
-            $("#title").stringToSlug({
-                setEvents: 'keyup keydown blur',
-                getPut: '#slug',
-                space: '-'
-            });
-        });
-        
         //Cambiar imagen
         document.getElementById("file").addEventListener('change', cambiarImagen);
 

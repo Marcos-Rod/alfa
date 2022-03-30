@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageGalleryController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TeamController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
@@ -19,3 +20,7 @@ Route::resource('galleries', GalleryController::class)->names('admin.galleries')
 Route::resource('gallery/image', ImageGalleryController::class)->names('admin.galleryimages');
 
 Route::resource('services', ServiceController::class)->names('admin.services');
+
+Route::resource('team', TeamController::class)->names('admin.teams');
+
+Route::resource('contact', TeamController::class)->names('admin.contacts');

@@ -257,6 +257,11 @@ return [
             'route'  => 'admin.configuration.index',
             'icon' => 'fas fa-fw fa-cog',
         ],
+        [
+            'text' => 'Contactos',
+            'route'  => 'admin.contacts.index',
+            'icon' => 'fas fa-fw fa-comments',
+        ],
         
         ['header' => 'CONTENIDOS'],
         [
@@ -275,6 +280,12 @@ return [
             'text' => 'Servicios',
             'route'  => 'admin.services.index',
             'icon' => 'fas fa-fw fa-briefcase',
+            
+        ],
+        [
+            'text' => 'Equipo',
+            'route'  => 'admin.teams.index',
+            'icon' => 'fas fa-fw fa-user-friends',
             
         ],
     ],
