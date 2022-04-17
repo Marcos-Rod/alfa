@@ -11,6 +11,11 @@ class Service extends Model
 
     protected $fillable = ['title', 'slug', 'content', 'status'];
 
+    //Relación uno a muchos
+    public function contacts(){
+        return $this->hasMany(Contact::class);
+    }
+
     //Relación uno a uno polimorfica
     public function image(){
         return $this->morphOne(Image::class, 'imageable');

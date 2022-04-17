@@ -11,6 +11,11 @@ class team extends Model
 
     protected $fillable = ['name', 'description'];
 
+    //Relación uno a muchos
+    public function contacts(){
+        return $this->hasMany(Contact::class);
+    }
+
     //Relación uno a uno polimorfica
     public function image(){
         return $this->morphOne(Image::class, 'imageable');

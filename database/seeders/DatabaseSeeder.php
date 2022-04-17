@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Configuration;
 use App\Models\Section;
+use App\Models\Service;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -41,6 +43,15 @@ class DatabaseSeeder extends Seeder
             'slug' => 'inicio',
             'extract' => 'Sección en construcción',
             'content' => 'Sección en construcción'
+        ]);
+
+        Service::Create([
+            'title' => 'servicio 1'
+        ]);
+        
+        Team::Create([
+            'name' => 'Marcos',
+            'description' => 'barbero'
         ]);
     }
 }

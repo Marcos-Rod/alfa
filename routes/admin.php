@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CKEditorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ConfigurationController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageGalleryController;
 use App\Http\Controllers\Admin\SectionController;
@@ -23,4 +25,7 @@ Route::resource('services', ServiceController::class)->names('admin.services');
 
 Route::resource('team', TeamController::class)->names('admin.teams');
 
-Route::resource('contact', TeamController::class)->names('admin.contacts');
+Route::resource('contact', ContactController::class)->names('admin.contacts');
+
+//Ruta para la carga de imágenes de ckeditor
+Route::post('ckeditor/image_upload', [CKEditorController::class, 'upload'])->name('upload');

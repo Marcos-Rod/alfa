@@ -21,7 +21,7 @@
             {!! Form::model($configuration[0], ['route' => ['admin.configuration.update', $configuration[0]], 'method' => 'put', 'files' => true]) !!}
 
                 <div class="row">
-                    <div class="col d-flex align-items-center justify-content-center flex-column text-center">
+                    <div class="offset-md-2 col-md-4 d-flex align-items-center justify-content-center flex-column text-center">
                         <div class="form-group">
                             {!! Form::label('logo', 'Logo principal') !!}
                             {!! Form::file('logo', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
@@ -32,12 +32,15 @@
                         </div>
                         <p>Selecciona una imagen no mayor de 200kb</p>
                     </div>
-                    <div class="col">
-                        @if (!empty($configuration[0]->image->url))
-                            <img src="{{Storage::url($configuration[0]->image->url)}}" alt="{{$configuration[0]->name_business}}" class="img-fluid" id="picture" />                            
-                        @else
-                            <img src="{{Storage::url('images/alfa-barber-primary.png')}}" alt="{{$configuration[0]->name_business}}" class="img-fluid" id="picture" />                            
-                        @endif
+                    <div class="col-md-4">
+                        <div class="image-wrapper">
+                            @if (!empty($configuration[0]->image->url))
+                                <img src="{{Storage::url($configuration[0]->image->url)}}" alt="{{$configuration[0]->name_business}}" class="img-fluid" id="picture" />                            
+                            @else
+                                <img src="{{asset('img/default-600-x-300.jpg')}}" alt="{{$configuration[0]->name_business}}" class="img-fluid" id="picture" />                            
+                            @endif
+
+                        </div>
                     </div>
                 </div>
                
@@ -118,6 +121,22 @@
         </div>
     </div>
 
+@stop
+
+@section('css')
+    <style>
+        .image-wrapper{
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+        }
+        .image-wrapper img{
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 @stop
 
 @section('js')

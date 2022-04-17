@@ -31,9 +31,18 @@
 
 @section('js')
 
+    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+
     <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
     <script>
+        CKEDITOR.replace( 'content', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
+            customConfig: '/js/ckeditor_settings/config.js'
+        } );
+
+
         $(document).ready( function() {
             $("#title").stringToSlug({
                 setEvents: 'keyup keydown blur',
