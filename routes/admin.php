@@ -29,3 +29,6 @@ Route::resource('contact', ContactController::class)->names('admin.contacts');
 
 //Ruta para la carga de imágenes de ckeditor
 Route::post('ckeditor/image_upload', [CKEditorController::class, 'upload'])->name('upload');
+
+//Respuesta de contactos
+Route::post('/contact', [ContactController::class, 'submit'])->name('admin.response.submit');

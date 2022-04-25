@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactAdminMail;
 use App\Mail\ContactMail;
 use App\Models\Contact;
+use App\Models\Section;
 use App\Models\Service;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -15,8 +16,9 @@ class MainController extends Controller
     public function index(){
         $teams = Team::pluck('name', 'id');
         $services = Service::pluck('title', 'id');
-
-        return view('inicio', compact('teams', 'services'));
+        $sections = Section::all();
+        
+        return view('inicio', compact('teams', 'services', 'sections'));
     }
 
     public function submit(Request $request){

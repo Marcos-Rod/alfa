@@ -26,13 +26,13 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         User::create([
             'name' => 'Alfa Barber',
-            'email' => 'tmlwar01@gmail.com',
-            'password' => bcrypt('12345678')
+            'email' => 'contacto@alfa-barber.com',
+            'password' => bcrypt('123123123')
         ]);
 
         Configuration::create([
             'name_business' => 'Alfa Barber',
-            'mail' => 'contacto@alfabarber.com',
+            'mail' => 'contacto@alfa-barber.com',
             'seo_term' => 'Barber shop',
             'meta_keywords' => 'Barberia, Barber shop',
             'meta_description' => 'Barberia profesional'

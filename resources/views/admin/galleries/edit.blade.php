@@ -3,7 +3,7 @@
 @section('title', 'Galerías')
 
 @section('content_header')
-    <h1>Editar de Galería {{$gallery->title}}</h1>
+    <h1>Editar Galería {{$gallery->title}}</h1>
 @stop
 
 @section('content')
@@ -38,8 +38,8 @@
                     
                     <h4 class="mt-2">{{$image->title}}</h4>
                     <p class="mb-1">{{$image->description}}</p>
-                    <p class="mb-1">{{$image->link}}</p>
-                    <p class="mb-1">{{$image->position}}</p>
+                    <p class="mb-1"><strong>{{$image->link}}</strong></p>
+                    <p class="mb-1">Posición: {{$image->position}}</p>
                     <p>
                         <a href="{{route('admin.galleryimages.edit', $image)}}" class="btn btn-primary btn-sm ">Editar</a>
                     </p>

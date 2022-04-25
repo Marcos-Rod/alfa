@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Configuration;
+use App\Models\Gallery;
 use Illuminate\View\Component;
 
 class AppLayout extends Component
@@ -13,6 +15,8 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        $configuracion = Configuration::first();
+
+        return view('layouts.app', compact('configuracion'));
     }
 }

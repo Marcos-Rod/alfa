@@ -41,7 +41,6 @@ class SectionController extends Controller
         $request->validate([
             'title' => 'required',
             'slug' => 'required',
-            'extract' => 'required',
         ]);
 
         $section = Section::create($request->all());

@@ -12,7 +12,7 @@
     </div>
     <div class="col">
         <div class="shadow-sm image-wrapper">
-            <img src="{{Storage::url('images/alfa-barber-primary.png')}}" alt="{{$gallery->title}}" class="img-fluid" id="picture" />
+            <img src="{{asset('img/default-1920-x-600.jpg')}}" alt="{{$gallery->title}}" class="img-fluid" id="picture" />
         </div>
     </div>
 </div>

@@ -77,7 +77,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        /* return $gallery->all(); */
+        /* return $gallery; */
         return view('admin.galleries.edit', compact('gallery'));
     }
 
