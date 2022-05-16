@@ -153,6 +153,9 @@ return [
         'mail' => 'correo',
         'image' => 'imagen',
         'logo' => 'logo',
+        'team_id' => 'barbero',
+        'service_id' => 'servicio',
+        'fate' => 'fecha',
     ],
 
 ];

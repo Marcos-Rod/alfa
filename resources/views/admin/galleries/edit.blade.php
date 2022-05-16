@@ -40,9 +40,20 @@
                     <p class="mb-1">{{$image->description}}</p>
                     <p class="mb-1"><strong>{{$image->link}}</strong></p>
                     <p class="mb-1">Posición: {{$image->position}}</p>
-                    <p>
-                        <a href="{{route('admin.galleryimages.edit', $image)}}" class="btn btn-primary btn-sm ">Editar</a>
-                    </p>
+                    <div class="d-flex">
+                        <div class="mr-2">
+                            <a href="{{route('admin.galleryimages.edit', $image)}}" class="btn btn-primary btn-sm ">Editar</a>
+                        </div>
+                        <div>
+                            <form action="{{route('admin.galleryimages.destroy', $image)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                
+                                <input type="hidden" name="galleryId" value="{{$gallery->slug}}">
+                                <button type="submit" class="btn btn-danger btn-sm ">Eliminar</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 @endforeach
             </div>

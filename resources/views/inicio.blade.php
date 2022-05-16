@@ -2,6 +2,10 @@
 
     @include('template.bienvenida')
 
-    @include('template.contacto')
+    @include('template.equipo')
+    
+    @include('template.servicios')
+    
+    @include('template.galeria')
 
 </x-app-layout>

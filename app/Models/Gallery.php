@@ -11,6 +11,11 @@ class Gallery extends Model
 
     protected $fillable = ['title', 'slug'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     //Relación uno a muchos polimorfica
     public function image(){
         return $this->morphMany(Image::class, 'imageable');

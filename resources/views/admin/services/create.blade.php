@@ -67,5 +67,12 @@
             };
             reader.readAsDataURL(file);
         }
+
+        //CKEditor
+        CKEDITOR.replace( 'content', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
+            customConfig: '/js/ckeditor_settings/config.js'
+        } );
     </script>
 @endsection

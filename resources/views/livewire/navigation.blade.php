@@ -9,7 +9,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto" id="menu">
                 @foreach ($sections as $section)
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#{{$section->slug}}">{{$section->title}}</a>

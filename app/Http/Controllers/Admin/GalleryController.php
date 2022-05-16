@@ -90,6 +90,11 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
+
+        $request->validate([
+            'image' => 'required'
+        ]);
+        
         if ($request->file('image')) {
             $url = Storage::put('galleries', $request->file('image'));
 

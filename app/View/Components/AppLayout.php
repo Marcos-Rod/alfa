@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use App\Models\Configuration;
 use App\Models\Gallery;
+use App\Models\Service;
+use App\Models\Team;
 use Illuminate\View\Component;
 
 class AppLayout extends Component
@@ -15,8 +17,10 @@ class AppLayout extends Component
      */
     public function render()
     {
+        $teams = Team::pluck('name', 'id');
+        $services = Service::pluck('title', 'id');
         $configuracion = Configuration::first();
 
-        return view('layouts.app', compact('configuracion'));
+        return view('layouts.app', compact('configuracion', 'teams', 'services'));
     }
 }

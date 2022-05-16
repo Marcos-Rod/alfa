@@ -14,7 +14,7 @@
                         </h3>
                      @endif
                      @if (!empty($item->link))
-                        <p class="mt-4"><a href="{{$item->link}}" class="btn btn-slide">Solicita Información</a></p>
+                        <p class="mt-4"><a href="{{$item->link}}" class="btn btn-slide">Más Información</a></p>
                     @endif
                 </div>
             </div>

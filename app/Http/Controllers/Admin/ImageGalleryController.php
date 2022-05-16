@@ -82,8 +82,11 @@ class ImageGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Image $image, Request $request)
     {
-        //
+
+        Storage::delete($image->url);
+        $image->delete();
+        return redirect()->route('admin.galleries.edit', $request->galleryId)->with('info', 'Imagen eliminada con éxito');
     }
 }
