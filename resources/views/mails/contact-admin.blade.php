@@ -13,10 +13,10 @@
                     <td style="border-bottom:2px solid #A58368;" width="400">
                         <p style="text-align: right">
                             <a href="www.facebook.com">
-                                <img src="{{asset('img/ico-facebook.png')}}" alt="Facebook">
+                                <img src="{{asset('img/ico-facebook-2.png')}}" alt="Facebook">
                             </a>
                             <a href="www.instagram.com">
-                                <img src="{{asset('img/ico-instagram.png')}}" alt="Instagram">
+                                <img src="{{asset('img/ico-instagram-2.png')}}" alt="Instagram">
                             </a>
                         </p>
                     </td>

@@ -42,8 +42,8 @@ class MainController extends Controller
     
             /* $contact = Contact::create($request->all()); */
     
-            Mail::to($request->mail)
-                ->send(new ContactMail($request));
+            /* Mail::to($request->mail)
+                ->send(new ContactMail($request)); */
                 
             Mail::to($mail_admin)
                 ->cc('admin@correo.com')
