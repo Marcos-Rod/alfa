@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Alfa Barber',
             'email' => 'contacto@alfa-barber.com',
-            'password' => bcrypt('123456')
+            'password' => bcrypt(env('ADMIN_PASSWORD', '12345678'))
         ]);
 
         Configuration::create([
